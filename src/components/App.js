@@ -115,7 +115,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" basename={process.env.PUBLIC_URL}>
         <AddTask add={this.addTask}/>
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>
