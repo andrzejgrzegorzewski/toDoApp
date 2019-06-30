@@ -2,18 +2,19 @@ import React from 'react';
 
 const Task= (props) => {
 
-    const style = {
+    const styleStrong = {
         color: 'red',
     }
+
     const {id, text, date, important, active, finishDate,} = props.task;
 
     if(active){
         return ( 
             <div>
                 <p>
-                    <strong style={important ? style : null}>{text}</strong> - to <span>{date} </span>
-                    <button onClick={() => props.change(id)}>It was don</button>
-                    <button onClick={() => props.delete(id)}>X</button>
+                    <strong style={important ? styleStrong : null}>{text}</strong> - to <span>{date} </span>
+                    <button style={{margin:"0 10px 0 10px"}} onClick={() => props.change(id)}>It was don </button>
+                    <button onClick={() => props.delete(id)}> X </button>
                 </p>
             </div>
         );

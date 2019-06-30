@@ -12,8 +12,9 @@ class AddTask extends Component {
      }     
      
      handleText = (e) => {
+
          this.setState({
-             text: e.target.value,
+             text: e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1),
          })
      }
      
@@ -56,12 +57,12 @@ class AddTask extends Component {
 
         return ( 
             <div className="form">
-            <h1>toDo App</h1>
+            <h1>toDoApp</h1>
             <input type="text" placeholder="add task" value={this.state.text} onChange={this.handleText}/>
             <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheckbox}/>
             <label htmlFor="important">Priority</label>
             <br/>
-            <label htmlFor="date" >Until when to do it</label>
+            <label htmlFor="date" >Until when to do it: </label>
             <input type="date" value={this.state.date} onChange={this.handleDate} min={this.minDate} max={maxDate}/>
             <br/>
             <button onClick={this.handleClick}>Add</button>
